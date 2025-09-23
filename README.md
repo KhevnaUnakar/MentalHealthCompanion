@@ -11,7 +11,8 @@ Django manages secure sessions and user data privately.
 
 ⚠️ Disclaimer: This project is for educational purposes only. It is not a substitute for professional therapy or medical help.
 
-🚀 Installation & Setup
+
+**🚀 Installation & Setup**
 1. Clone the Repository
 git clone https://github.com/your-username/MentalHealthCompanion.git
 cd MentalHealthCompanion
@@ -30,7 +31,7 @@ python manage.py migrate
 5. Run the Development Server
 python manage.py runserver
 
-🧪 AI Integration
+**🧪 AI Integration**
 
 Mood Analysis: Emotion classification using Hugging Face models (transformers).
 
