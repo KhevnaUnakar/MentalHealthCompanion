@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv("SECRET_KEY", "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")
+SECRET_KEY = os.getenv("OPENAI_API_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "True") == "True"
@@ -54,7 +54,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'mentalhealthcompanion.urls'
+ROOT_URLCONF = 'mental_health_companion.urls'
 
 TEMPLATES = [
     {
@@ -72,7 +72,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'mentalhealthcompanion.wsgi.application'
+WSGI_APPLICATION = 'mental_health_companion.wsgi.application'
 
 
 # Database
@@ -133,4 +133,4 @@ REST_FRAMEWORK = {
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "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")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
