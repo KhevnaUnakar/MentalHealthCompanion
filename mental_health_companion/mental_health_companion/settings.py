@@ -24,6 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 #ENTER SECRET KEY HERE
+SECRET_KEY = os.getenv("OPENAI_API_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "True") == "True"
@@ -134,3 +135,4 @@ REST_FRAMEWORK = {
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #ENTER API KEY HERE
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
