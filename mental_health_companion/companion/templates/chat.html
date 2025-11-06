@@ -1,0 +1,27 @@
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <div class="card mt-4 p-3">
+      <h4 class="text-center"> Mental Health Companion</h4>
+      <div id="chat-window" class="chat-window" style="height:400px; overflow:auto; border:1px solid #eee; padding:10px; border-radius:8px;">
+        <!-- messages appended here -->
+      </div>
+
+      <div class="mt-3">
+        <textarea id="user-input" class="form-control" rows="2" placeholder="How are you feeling today?"></textarea>
+        <button id="send-btn" class="btn btn-primary mt-2 w-100">Send</button>
+      </div>
+
+      <div class="mt-3 small text-muted">
+        <strong>Disclaimer:</strong> This companion is NOT a replacement for professional mental health care. If you are in crisis or thinking about self-harm, contact your local emergency services immediately or a suicide hotline.
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  // minimal inline init: the actual fetch logic lives in static/js/chat.js
+  (function initChat() {
+    // placeholder
+  })();
+</script>
+{% endblock %}
