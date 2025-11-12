@@ -11,5 +11,8 @@ class Message(models.Model):
     mood_score = models.FloatField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        ordering = ['created_at']
+
     def __str__(self):
         return f"{self.sender}: {self.text[:40]}"

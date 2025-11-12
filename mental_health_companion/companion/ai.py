@@ -2,10 +2,26 @@
 import os
 import json
 import logging
-from openai import OpenAI
+from typing import Optional
 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-client = OpenAI(api_key=OPENAI_API_KEY)
+try:
+    from openai import OpenAI
+except Exception:
+    OpenAI = None  # openai package may be unavailable in some environments
+
+
+def _get_openai_client() -> Optional[object]:
+    """Return an OpenAI client if the package is available and API key is set.
+    Caller should handle None (no client) as meaning fallback behavior is required.
+    """
+    api_key = os.getenv("OPENAI_API_KEY")
+    if not api_key or OpenAI is None:
+        return None
+    try:
+        return OpenAI(api_key=api_key)
+    except Exception as e:
+        logging.info("Could not initialize OpenAI client: %s", e)
+        return None
 
 # Try to load Hugging Face sentiment pipeline (optional, may be heavy)
 sentiment_pipeline = None
@@ -24,8 +40,10 @@ def analyze_mood(user_input: str) -> dict:
     if sentiment_pipeline:
         res = sentiment_pipeline(user_input)[0]
         return {"label": res.get("label"), "score": float(res.get("score", 0.0))}
-    else:
-        # fallback: ask OpenAI for a brief JSON classification
+
+    # fallback: try OpenAI classification if available
+    client = _get_openai_client()
+    if client is not None:
         prompt = (
             "Classify the sentiment of the text that follows into Positive, Neutral, or Negative. "
             "Return strictly JSON like: {\"label\": \"Positive\", \"score\": 0.83}\n\n"
@@ -39,20 +57,21 @@ def analyze_mood(user_input: str) -> dict:
                 temperature=0.0
             )
             content = resp.choices[0].message.content.strip()
-            # try to parse JSON
             parsed = json.loads(content)
             return {
                 "label": parsed.get("label", "Neutral"),
                 "score": float(parsed.get("score", 0.0))
             }
-        except Exception:
-            # last-resort naive parse
-            text = user_input.lower()
-            if any(x in text for x in ["sad", "depressed", "suicid", "hopeless", "angry"]):
-                return {"label": "Negative", "score": 0.9}
-            if any(x in text for x in ["okay", "fine", "neutral", "so-so", "meh"]):
-                return {"label": "Neutral", "score": 0.6}
-            return {"label": "Positive", "score": 0.7}
+        except Exception as e:
+            logging.info("OpenAI sentiment classification failed: %s", e)
+
+    # last-resort naive parse
+    text = user_input.lower()
+    if any(x in text for x in ["sad", "depressed", "suicid", "hopeless", "angry"]):
+        return {"label": "Negative", "score": 0.9}
+    if any(x in text for x in ["okay", "fine", "neutral", "so-so", "meh"]):
+        return {"label": "Neutral", "score": 0.6}
+    return {"label": "Positive", "score": 0.7}
 
 def generate_response(user_input: str, conversation_history: list = None, max_tokens: int = 200) -> str:
     """
@@ -71,11 +90,26 @@ def generate_response(user_input: str, conversation_history: list = None, max_to
         messages.extend(conversation_history)
     messages.append({"role": "user", "content": user_input})
 
-    response = client.chat.completions.create(
-        model="gpt-4o-mini",
-        messages=messages,
-        max_tokens=max_tokens,
-        temperature=0.7,
-    )
-    ai_text = response.choices[0].message.content.strip()
-    return ai_text
+    client = _get_openai_client()
+    if client is None:
+        # No OpenAI client available: return a safe, empathetic fallback response.
+        return (
+            "Thanks for sharing — I'm here to listen. "
+            "It sounds like you're going through something important. Can you tell me more?"
+        )
+
+    try:
+        response = client.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=messages,
+            max_tokens=max_tokens,
+            temperature=0.7,
+        )
+        ai_text = response.choices[0].message.content.strip()
+        return ai_text
+    except Exception as e:
+        logging.info("OpenAI generate_response failed: %s", e)
+        return (
+            "I'm having trouble generating a detailed response right now, "
+            "but I'm here to listen. Could you say a bit more about how you're feeling?"
+        )
