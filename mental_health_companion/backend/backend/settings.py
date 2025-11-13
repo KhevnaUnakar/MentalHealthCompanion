@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'chat',
     'mood',
     'news',
+    'journal',
 ]
 
 MIDDLEWARE = [
@@ -97,5 +98,5 @@ CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
 
 # API Keys
-OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY', '')
+GEMINI_API_KEY = os.environ.get('GEMINI_API_KEY', '')
 NEWS_API_KEY = os.environ.get('NEWS_API_KEY', '')
