@@ -5,12 +5,20 @@ from rest_framework.response import Response
 from .models import ChatSession, Message
 from .serializers import ChatSessionSerializer, MessageSerializer
 from .ai_service import get_ai_response
+from mood.models import MoodEntry
 
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def create_session(request):
     mood = request.data.get('mood', 'neutral')
     session = ChatSession.objects.create(user=request.user, mood=mood)
+    
+    # Create mood entry for tracking
+    MoodEntry.objects.create(
+        user=request.user,
+        mood=mood,
+        notes=f"Started chat session with {mood} mood"
+    )
     
     # Initial greeting from bot
     greeting = f"Hello! I'm here to support you. I understand you're feeling {mood}. How can I help you today?"
