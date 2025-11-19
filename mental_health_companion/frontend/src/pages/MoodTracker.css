@@ -1,0 +1,55 @@
+.stats {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #475569;
+  font-weight: 500;
+}
+
+.mood-history {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mood-entry {
+  display: flex;
+  gap: 16px;
+  padding: 20px;
+  background: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid #E2E8F0;
+  transition: all 0.3s ease;
+}
+
+.mood-entry:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.mood-badge {
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  text-transform: capitalize;
+  white-space: nowrap;
+  height: fit-content;
+  font-size: 14px;
+}
+
+.mood-details {
+  flex: 1;
+}
+
+.mood-details p {
+  color: #1A202C;
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+.date {
+  color: #64748B;
+  font-size: 13px;
+}

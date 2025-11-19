@@ -1,0 +1,707 @@
+/* Dark Mode Support for All Pages */
+
+/* Chat Page */
+.chat-box {
+  background: #FFFFFF;
+  border-color: #E5E7EB;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.dark .chat-box {
+  background: #1F2937;
+  border-color: #374151;
+}
+
+.messages-container {
+  background: #F9FAFB;
+  transition: background-color 0.3s;
+}
+
+.dark .messages-container {
+  background: #111827;
+}
+
+.message.bot .message-content {
+  background: #FFFFFF;
+  color: #1F2937;
+  border-color: #E5E7EB;
+}
+
+.dark .message.bot .message-content {
+  background: #374151;
+  color: #F9FAFB;
+  border-color: #4B5563;
+}
+
+.typing {
+  color: #4B5563;
+}
+
+.dark .typing {
+  color: #9CA3AF;
+}
+
+.message-input-form {
+  border-color: #E5E7EB;
+  background: #FFFFFF;
+}
+
+.dark .message-input-form {
+  border-color: #374151;
+  background: #1F2937;
+}
+
+.message-input-form input {
+  background: #FFFFFF;
+  color: #1F2937;
+  border-color: #D1D5DB;
+}
+
+.dark .message-input-form input {
+  background: #374151;
+  color: #FFFFFF;
+  border-color: #4B5563;
+}
+
+/* Mood Tracker & Progress */
+.stats {
+  color: #374151;
+}
+
+.dark .stats {
+  color: #D1D5DB;
+}
+
+.mood-entry {
+  background: #FFFFFF;
+  border-color: #E5E7EB;
+}
+
+.dark .mood-entry {
+  background: #1F2937;
+  border-color: #374151;
+}
+
+.mood-details p {
+  color: #1F2937;
+}
+
+.dark .mood-details p {
+  color: #F9FAFB;
+}
+
+.date {
+  color: #4B5563;
+}
+
+.dark .date {
+  color: #9CA3AF;
+}
+
+.progress-card {
+  background: #FFFFFF;
+  border-color: #E5E7EB;
+}
+
+.dark .progress-card {
+  background: #1F2937;
+  border-color: #374151;
+}
+
+.card-value {
+  color: #2563EB;
+}
+
+.dark .card-value {
+  color: #60A5FA;
+}
+
+.card-label {
+  color: #4B5563;
+}
+
+.dark .card-label {
+  color: #9CA3AF;
+}
+
+.chart-legend {
+  color: #4B5563;
+  border-color: #E5E7EB;
+}
+
+.dark .chart-legend {
+  color: #9CA3AF;
+  border-color: #374151;
+}
+
+.mood-bar-label {
+  color: #1F2937;
+}
+
+.dark .mood-bar-label {
+  color: #F9FAFB;
+}
+
+.mood-bar-wrapper {
+  background: #E5E7EB;
+}
+
+.dark .mood-bar-wrapper {
+  background: #374151;
+}
+
+.mood-bar-value {
+  color: #2563EB;
+}
+
+.dark .mood-bar-value {
+  color: #60A5FA;
+}
+
+/* Journal */
+.journal-entry-card {
+  background: #FFFFFF;
+  border-color: #E5E7EB;
+}
+
+.dark .journal-entry-card {
+  background: #1F2937;
+  border-color: #374151;
+}
+
+.entry-header h3 {
+  color: #1F2937;
+}
+
+.dark .entry-header h3 {
+  color: #FFFFFF;
+}
+
+.entry-content {
+  color: #374151;
+}
+
+.dark .entry-content {
+  color: #D1D5DB;
+}
+
+.tag {
+  background: #F3F4F6;
+  color: #374151;
+}
+
+.dark .tag {
+  background: #374151;
+  color: #D1D5DB;
+}
+
+.entry-footer {
+  border-color: #E5E7EB;
+}
+
+.dark .entry-footer {
+  border-color: #374151;
+}
+
+.entry-date {
+  color: #6B7280;
+}
+
+.dark .entry-date {
+  color: #9CA3AF;
+}
+
+.empty-state {
+  color: #4B5563;
+}
+
+.dark .empty-state {
+  color: #9CA3AF;
+}
+
+/* News */
+.article-card {
+  background: #FFFFFF;
+  border-color: #E5E7EB;
+}
+
+.dark .article-card {
+  background: #1F2937;
+  border-color: #374151;
+}
+
+.article-content h3 {
+  color: #1F2937;
+}
+
+.dark .article-content h3 {
+  color: #FFFFFF;
+}
+
+.article-content p {
+  color: #4B5563;
+}
+
+.dark .article-content p {
+  color: #9CA3AF;
+}
+
+.source {
+  color: #6B7280;
+}
+
+.dark .source {
+  color: #6B7280;
+}
+
+.read-more {
+  color: #2563EB;
+}
+
+.dark .read-more {
+  color: #60A5FA;
+}
+
+/* Meditation */
+.stat-card {
+  background: #FFFFFF;
+  border-color: #E5E7EB;
+}
+
+.dark .stat-card {
+  background: #1F2937;
+  border-color: #374151;
+}
+
+.stat-value {
+  color: #2563EB;
+}
+
+.dark .stat-value {
+  color: #60A5FA;
+}
+
+.stat-label {
+  color: #4B5563;
+}
+
+.dark .stat-label {
+  color: #9CA3AF;
+}
+
+.session-selector {
+  background: #FFFFFF;
+  border-color: #E5E7EB;
+}
+
+.dark .session-selector {
+  background: #1F2937;
+  border-color: #374151;
+}
+
+.session-selector h2 {
+  color: #1F2937;
+}
+
+.dark .session-selector h2 {
+  color: #FFFFFF;
+}
+
+.session-type-btn {
+  background: #F9FAFB;
+  border-color: #D1D5DB;
+  color: #1F2937;
+}
+
+.dark .session-type-btn {
+  background: #374151;
+  border-color: #4B5563;
+  color: #F9FAFB;
+}
+
+.session-type-btn.active {
+  background: #2563EB;
+  color: white;
+}
+
+.dark .session-type-btn.active {
+  background: #2563EB;
+}
+
+.duration-btn {
+  background: #F9FAFB;
+  border-color: #D1D5DB;
+  color: #1F2937;
+}
+
+.dark .duration-btn {
+  background: #374151;
+  border-color: #4B5563;
+  color: #F9FAFB;
+}
+
+.duration-btn.active {
+  background: #2563EB;
+  color: white;
+}
+
+.dark .duration-btn.active {
+  background: #2563EB;
+}
+
+.meditation-tips h3 {
+  color: #1F2937;
+}
+
+.dark .meditation-tips h3 {
+  color: #FFFFFF;
+}
+
+.meditation-tips ul {
+  color: #4B5563;
+}
+
+.dark .meditation-tips ul {
+  color: #9CA3AF;
+}
+
+/* Mood Game */
+.game-card {
+  background: #FFFFFF;
+  border-color: #E5E7EB;
+}
+
+.dark .game-card {
+  background: #1F2937;
+  border-color: #374151;
+}
+
+.game-start h2 {
+  color: #1F2937;
+}
+
+.dark .game-start h2 {
+  color: #FFFFFF;
+}
+
+.game-start p {
+  color: #4B5563;
+}
+
+.dark .game-start p {
+  color: #9CA3AF;
+}
+
+.final-score {
+  background: #F9FAFB;
+  border-color: #E5E7EB;
+}
+
+.dark .final-score {
+  background: #374151;
+  border-color: #4B5563;
+}
+
+.final-score h3 {
+  color: #2563EB;
+}
+
+.dark .final-score h3 {
+  color: #60A5FA;
+}
+
+.option-btn {
+  background: #F9FAFB;
+  border-color: #D1D5DB;
+  color: #1F2937;
+}
+
+.dark .option-btn {
+  background: #374151;
+  border-color: #4B5563;
+  color: #F9FAFB;
+}
+
+.option-btn:hover {
+  background: #2563EB;
+  color: white;
+  border-color: #2563EB;
+}
+
+.dark .option-btn:hover {
+  background: #2563EB;
+  border-color: #2563EB;
+}
+
+/* Resources & Wellness */
+.resource-card {
+  background: #FFFFFF;
+  border-color: #E5E7EB;
+}
+
+.dark .resource-card {
+  background: #1F2937;
+  border-color: #374151;
+}
+
+.resource-card h3 {
+  color: #1F2937;
+}
+
+.dark .resource-card h3 {
+  color: #FFFFFF;
+}
+
+.resource-card p {
+  color: #4B5563;
+}
+
+.dark .resource-card p {
+  color: #9CA3AF;
+}
+
+.activity-card {
+  background: #FFFFFF;
+  border-color: #E5E7EB;
+}
+
+.dark .activity-card {
+  background: #1F2937;
+  border-color: #374151;
+}
+
+.activity-card h3 {
+  color: #1F2937;
+}
+
+.dark .activity-card h3 {
+  color: #FFFFFF;
+}
+
+.activity-card p {
+  color: #4B5563;
+}
+
+.dark .activity-card p {
+  color: #9CA3AF;
+}
+
+.wellness-intro {
+  background: #FFFFFF;
+  border-color: #E5E7EB;
+}
+
+.dark .wellness-intro {
+  background: #1F2937;
+  border-color: #374151;
+}
+
+.wellness-intro p {
+  color: #4B5563;
+}
+
+.dark .wellness-intro p {
+  color: #9CA3AF;
+}
+
+.wellness-category h2 {
+  color: #1F2937;
+}
+
+.dark .wellness-category h2 {
+  color: #FFFFFF;
+}
+
+/* Modal */
+.modal-content {
+  background: #FFFFFF;
+}
+
+.dark .modal-content {
+  background: #1F2937;
+}
+
+.modal-content h2 {
+  color: #1F2937;
+}
+
+.dark .modal-content h2 {
+  color: #FFFFFF;
+}
+
+.modal-description {
+  color: #4B5563;
+}
+
+.dark .modal-description {
+  color: #9CA3AF;
+}
+
+.modal-section h3 {
+  color: #1F2937;
+}
+
+.dark .modal-section h3 {
+  color: #FFFFFF;
+}
+
+.modal-section p {
+  color: #374151;
+}
+
+.dark .modal-section p {
+  color: #D1D5DB;
+}
+
+.instructions-list li {
+  color: #374151;
+}
+
+.dark .instructions-list li {
+  color: #D1D5DB;
+}
+
+.benefits-section {
+  background: #EFF6FF;
+  border-color: #2563EB;
+}
+
+.dark .benefits-section {
+  background: rgba(30, 58, 138, 0.2);
+  border-color: #2563EB;
+}
+
+.benefits-section p {
+  color: #1F2937;
+}
+
+.dark .benefits-section p {
+  color: #F9FAFB;
+}
+
+/* Self-Care */
+.selfcare-stats .stat-box {
+  background: #FFFFFF;
+  border-color: #E5E7EB;
+}
+
+.dark .selfcare-stats .stat-box {
+  background: #1F2937;
+  border-color: #374151;
+}
+
+.stat-number {
+  color: #2563EB;
+}
+
+.dark .stat-number {
+  color: #60A5FA;
+}
+
+.activity-item {
+  background: #FFFFFF;
+  border-color: #E5E7EB;
+}
+
+.dark .activity-item {
+  background: #1F2937;
+  border-color: #374151;
+}
+
+.activity-content h3 {
+  color: #1F2937;
+}
+
+.dark .activity-content h3 {
+  color: #FFFFFF;
+}
+
+.activity-content p {
+  color: #4B5563;
+}
+
+.dark .activity-content p {
+  color: #9CA3AF;
+}
+
+.activity-type {
+  background: #F3F4F6;
+  color: #374151;
+}
+
+.dark .activity-type {
+  background: #374151;
+  color: #D1D5DB;
+}
+
+.activity-date {
+  color: #6B7280;
+}
+
+.dark .activity-date {
+  color: #9CA3AF;
+}
+
+/* Form Elements */
+.form-group label {
+  color: #1F2937;
+}
+
+.dark .form-group label {
+  color: #FFFFFF;
+}
+
+.form-group select {
+  background: #FFFFFF;
+  color: #1F2937;
+  border-color: #D1D5DB;
+}
+
+.dark .form-group select {
+  background: #374151;
+  color: #FFFFFF;
+  border-color: #4B5563;
+}
+
+.type-btn {
+  background: #FFFFFF;
+  border-color: #D1D5DB;
+  color: #1F2937;
+}
+
+.dark .type-btn {
+  background: #374151;
+  border-color: #4B5563;
+  color: #F9FAFB;
+}
+
+.type-btn.active {
+  background: #F3F4F6;
+}
+
+.dark .type-btn.active {
+  background: #4B5563;
+}
+
+.suggestion-btn {
+  background: #F3F4F6;
+  border-color: #D1D5DB;
+  color: #374151;
+}
+
+.dark .suggestion-btn {
+  background: #374151;
+  border-color: #4B5563;
+  color: #D1D5DB;
+}
+
+.suggestion-btn:hover {
+  background: #2563EB;
+  color: white;
+  border-color: #2563EB;
+}
+
+.dark .suggestion-btn:hover {
+  background: #2563EB;
+  border-color: #2563EB;
+}
